@@ -15,10 +15,7 @@ is_alive_ping()
 
 main() {
 
-subnet1=`echo $1 | cut -d. -f1 `
-subnet2=`echo $1 | cut -d. -f2 `
-subnet3=`echo $1 | cut -d. -f3 `
-subnet=$subnet1.$subnet2.$subnet3
+subnet=`echo $1 | cut -d. -f1,2,3`
 for i in  $subnet.{1..254}
 do
 is_alive_ping $i & disown
